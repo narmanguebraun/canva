@@ -1,0 +1,162 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+/* CANVA */
+* {box-sizing: border-box;}
+html {font-size: 100%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-font-smoothing: antialiased;}
+
+body {
+  font-family: 'Roboto Mono', Courier New, Courier, monospace;
+  font-size: 13px;
+  line-height: 20px;
+  color: #000;
+  background-color:#4d4d4d;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Site */
+.top-bar {
+  height: 50px;
+  line-height:50px;
+  width: 100%;
+  position: fixed;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+/* Font Awesome Icons */
+.fas,
+.far {
+  font-size: 15px;
+  position: relative;
+  color: white;
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fas:hover,
+.far:hover {
+  filter: brightness(60%);
+}
+
+.fa-fill-drip {
+  cursor: default;
+}
+
+/* Tools */
+.active-tool {
+  position: absolute;
+  left: 10px;
+  color:#ccc;
+}
+
+.active-tool > span {
+  border: solid 1px #ccc;
+  padding: 5px 20px;
+  color: white;
+  user-select: none;
+}
+
+.tool {
+  position: relative;
+}
+
+.brush {
+  height: 50px;
+  width: 340px;
+  margin:0 0 0 150px;
+}
+
+.brush > * {
+  margin: 0;
+}
+
+.size {
+  min-width: 40px;
+  margin:0 10px 0 0;
+  position: relative;
+  border: solid 1px #ccc;
+  padding: 5px 10px;
+  color: white;
+  user-select: none;
+}
+
+/* Custom Slider */
+.slider {
+  -webkit-appearance: none;
+  position: relative;
+  left: -8px;
+  width: 100px;
+  height: 10px;
+  background: rgb(177, 177, 177);
+  outline: none;
+  opacity: 0.7;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: rgb(47, 47, 47);
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: rgb(47, 47, 47);
+}
+
+/* JS Color */
+.jscolor {
+  border-radius: 0;
+  font-family: 'Roboto Mono', Courier New, Courier, monospace;
+  font-size: 13px;
+  height: 30px;
+  width: 120px;
+  border:solid 1px #ccc;
+  background:#000;
+  color:#fff;
+  text-align: center;
+  cursor: pointer;
+  outline:none;
+}
+
+/* Canvas */
+canvas#canvas {
+  background-color: rgb(177, 177, 177);
+  position: absolute;
+  top: 50px;
+  cursor: crosshair;
+  z-index: 10;
+}
+
+/* SCREEN MESSAGE */
+.mobile-message {
+  display: none;
+}
+/* Media Query: Mobile Devices */
+@media screen and (max-width: 767px) {
+  .mobile-message {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+  }
+}
